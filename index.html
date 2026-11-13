@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#1b1916">
+<title>House Tour</title>
+<style>
+html,body{margin:0;height:100%;background:#000;overflow:hidden;overscroll-behavior:none;position:fixed;inset:0;width:100%;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;font:15px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}
+canvas{display:block;position:fixed;inset:0;touch-action:none}
+#help{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));transform:translateX(-50%);max-width:min(92vw,560px);box-sizing:border-box;padding:9px 16px;border-radius:12px;background:rgba(24,22,18,.62);color:#fff6e6;text-align:center;pointer-events:none;transition:opacity .8s}
+#help.used{opacity:0}
+#resetBtn{position:fixed;left:calc(14px + env(safe-area-inset-left));top:calc(14px + env(safe-area-inset-top));min-height:44px;padding:0 16px;border:0;border-radius:22px;background:rgba(24,22,18,.62);color:#fff6e6;font:15px system-ui,-apple-system,sans-serif;touch-action:manipulation}
+#veil{position:fixed;inset:0;background:#000;opacity:0;pointer-events:none;transition:opacity .2s}
+#veil.on{opacity:1}
+#loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;color:#fff6e6;background:#1b1916}
+#VRButton{position:fixed;left:50%;transform:translateX(-50%);top:calc(16px + env(safe-area-inset-top));font:16px system-ui,-apple-system,sans-serif;padding:12px 20px;border:1px solid #fff6e6;border-radius:8px;background:rgba(24,22,18,.8);color:#fff6e6;cursor:pointer}
+</style>
+  <script type="module" crossorigin src="./assets/index-DfeU51_K.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/three.core-BdLppeg5.js">
+  <link rel="modulepreload" crossorigin href="./assets/light-system-D95rK1ox.js">
+</head>
+<body>
+<div id="app"></div>
+<div id="loading">Loading house…</div>
+<script>
+// Plain script, so a phone too old for the 3D code still explains itself.
+addEventListener('error',(e)=>{const l=document.getElementById('loading');if(l)l.textContent='Could not load the house: '+(e.message||'file error');});
+addEventListener('unhandledrejection',(e)=>{const l=document.getElementById('loading');if(l)l.textContent='Could not load the house: '+(e.reason&&e.reason.message||e.reason);});
+</script>
+<div id="help" hidden></div>
+</body>
+</html>
